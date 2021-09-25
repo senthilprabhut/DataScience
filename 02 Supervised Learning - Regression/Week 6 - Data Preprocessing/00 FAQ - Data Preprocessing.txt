@@ -1,0 +1,9 @@
+1. Why do we use axis=1 for calculating row mean? Shouldn't we use axis=0?
+axis=0 means along the rows and axis=1 means along the columns.
+
+So when we want to find the column means, we use axis=0 to 'move along the rows' to get the mean of the columns. When we want to find row means, we use axis=1 to 'move along the columns' to get the mean of the rows.
+
+
+
+2. Is scaling mandatory for linear regression?
+Scaling is not mandatory for linear regression but can be done to ensure that the units of the regression coefficients are the same.

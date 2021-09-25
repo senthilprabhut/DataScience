@@ -1,0 +1,41 @@
+FAQs - Logitic Regression
+1. What is Supervised Learning?
+Supervised learning is when you already know the label of the target variable. It is of two types: regression and classification. Regression is when the target variable is continuous and classification is when the target variable is in form of categories or discrete values.
+
+For Example:
+
+Regression: House Price prediction based on area, number of rooms, lawn, pool, etc.
+
+Classification: Predicting whether a person will be diabetic in the future or not based on BP, glucose, insulin, etc.
+
+As you can see here, it is already known the target variable is the price in case of regression and whether the person is diabetic or not in case of classification. So we know what we want to predict.
+
+2. When should we use Precision or Recall as model performance evaluation criteria?
+Precision should be used when you want to minimize False Positives i.e. one wants at least negatives should not be predicted as positives. Also, in cases where the loss of resources is high.
+
+Recall should be used when you want to minimize False Negatives, i.e. one wants at least positives should not be predicted as negatives. Also, in cases where the loss of opportunity is high.
+
+3. What is misclassification?
+Misclassification occurs when values are predicted incorrectly or the model assigns the observation to a different class instead of the class it should be in. For example, for observation, the actual label is class 0 but the model predicts this observation as class 1.
+
+4. Why confusion matrix is inverted in the hands-on notebook and it is difficult to identify TP, TN, FP, and FN?
+Generally, in theory, or while teaching confusion matrix many sources keep the predicted labels are on the y-axis whereas the actual labels are on the x-axis.
+
+But in the implementation, it can be different depending upon the library we are using.
+Sklearn follows an approach of Actual labels on the x-axis and Predicted labels on the y-axis.
+
+Let us understand how to identify TP, TN, FP, and FN in a confusion matrix through an example:
+
+Let's say we are trying to predict a person is diabetic (class 1) or not (class 0).
+
+True Positives (TP):  A person has diabetes and the model predicted that person is diabetic.
+True Negatives (TN): A person doesn't have diabetes and the model predicted that person doesn't have diabetes.
+False Positives (FP): A person doesn't have diabetes but the model predicted that person has diabetes.
+False Negatives (FN): The person has diabetes but the model predicted that person doesn't have diabetes.
+Now based on the actual label and predicted label you can identify the TP, TN, FP, and FN.
+
+
+5. When do we label encode and create dummy variables for categorical levels?
+We generally prefer label encoding when there is a sense of order on the values, for example, let's say a variable has values bad, good, very good in such a case we know that there is an order and we can encode them as 1,2,3 respectively.
+
+But let's say the values are red, blue, green in this case there is no definite order in values and hence creating dummy variables would be a better choice.
