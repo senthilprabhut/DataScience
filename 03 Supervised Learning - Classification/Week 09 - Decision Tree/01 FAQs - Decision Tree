@@ -1,0 +1,19 @@
+FAQs - Decision Tree
+1. Will Logistic Regression and Decision Tree give the same variables in order of importance?
+It is not necessary that all the models give equal importance to the same variables. Each model will provide a result with different variables as important in a different order.
+
+2. How does multicollinearity affect a Decision Tree?
+Multicollinearity doesn't affect the prediction of a model rather has an impact on the interpretation we make from the model. Multicollinearity affects linear models only whereas a Decision Tree is a non-linear model that is not impacted by the presence of multicollinearity in the data.
+
+3. Decision Tree arrows are missing, how to fix this?
+Use the following code as your reference to resolve the issue and make necessary changes in name of the model, feature names, etc.
+
+plt.figure(figsize=(20,30))
+out = tree.plot_tree(model,feature_names=feature_names,filled=True,fontsize=9,node_ids=False,class_names=None,)
+#below code will add arrows to the decision tree split if they are missing
+for o in out:
+     arrow = o.arrow_patch
+     if arrow is not None:
+        arrow.set_edgecolor('black')
+        arrow.set_linewidth(1)
+plt.show()
